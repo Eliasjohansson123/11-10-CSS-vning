@@ -1,0 +1,94 @@
+@keyframes a-hover{
+    from{
+        font-size: 1.5rem;
+    }
+    to{
+        font-size:2rem;
+    }
+}
+
+body, span{
+    padding:0;
+    margin: 0;
+}
+
+header{
+    height: 100px;
+    text-align: center;
+    justify-content: center;
+    line-height: 100px;
+    box-shadow: 0 0 20px #99f;
+    margin-bottom: 50px;
+}
+#logo{
+    position: absolute;
+    height: 96px;
+    width: 96px;
+    background-color: #ccf;
+    border: solid 2px #99f;
+}
+nav a{
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0 10px 0 10px;
+    color: #55c;
+    font-size: 1.5rem;
+    border-radius: 15px;
+}
+nav a:hover{
+    animation-name:a-hover;
+    animation-duration: 200ms;
+    animation-fill-mode:both;
+    animation-direction: alternate;
+}
+.content{
+    overflow: hidden;
+    min-height:75vh;
+    width:100vw;
+    display:grid;
+    grid-template-areas:
+    "side top top top"
+    "side mid mid mid"
+    "side bottom bottom bottom";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.content div{
+    width: 100%;
+    border:solid 2px #99f;
+}
+.content > section{
+    display:flex;
+}
+.content div:not(#content-side div){
+    text-align: center;
+}
+.content div:not(#content-side div):hover{
+    background-color: #ddf;
+}
+.content div:active{
+    background-color: #cce;
+}
+#content-top{
+    grid-area:top;
+}
+#content-mid{
+    grid-area:mid;
+}
+#content-bottom{
+    grid-area:bottom;
+}
+#content-side{
+    grid-area:side;
+    font-size: 1.2rem;
+    color:rgb(34, 34, 80);
+}
+#content-side div{
+    max-height: 100%;
+    padding: 20px;
+    overflow: hidden;
+}
+footer{
+    padding: 20px 10px;
+    margin-top:50px;
+    border: solid 2px #ccf;
+}
